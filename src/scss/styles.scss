@@ -106,3 +106,6 @@
   60% { transform: rotateY(360deg); }   /* Быстрый возврат (ещё 0.3 сек) */
   100% { transform: rotateY(360deg); }  /* Лицевая сторона видна до конца (3 сек) */
 }
+
+
+@import "adaptive";
