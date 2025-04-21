@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Sora-Regular';
+  src: url('../assets/fonts/Sora-Regular.ttf');
+}
+@font-face {
+  font-family: 'Sora-Bold';
+  src: url('../assets/fonts/Sora-Bold.ttf');
+}
+@font-face {
+  font-family: 'Sora-ExtraBold';
+  src: url('../assets/fonts/Sora-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'Sora-SemiBold';
+  src: url('../assets/fonts/Sora-SemiBold.ttf');
+}
+
+$font-basic: 'Sora-Regular', sans-serif;
+$font-title: 'Sora-ExtraBold', sans-serif;
+$font-subtitle: 'Sora-Bold', sans-serif;
+$font-nav:'Sora-SemiBold', sans-serif;
+
+$font-size-basic: 16px;
+$font-size-title: 48px;
+$font-size-title-small: 28px;
+$font-size-subtitle: 32px;
+$font-size-subtitle-small: 20px;
+$font-size-nav:20px;
+
+$color-red:#E70012;
+$color-black:#000000;
+$color-white:#ffffff;
+$color-grey:#71717A;

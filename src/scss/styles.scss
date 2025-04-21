@@ -1,0 +1,108 @@
+@import url(../../dist/css/normalize.css);
+@import "components";
+
+.h1 {
+  color: $color-grey;
+  font-family: $font-basic;
+  font-size: $font-size-subtitle-small;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.block_flip-card {
+  display: flex;
+  justify-content: center
+
+}
+.flip-card {
+  perspective: 1000px;
+  width: 186px;
+  height: 186px;
+  //margin: 50px auto;
+  margin-left: 30px;
+
+  &-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  &:hover &-inner {
+    transform: rotateY(180deg);
+    cursor: pointer;
+  }
+
+  &-front, &-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-front {
+    //background-color: #ff5733;
+  }
+
+  &-back {
+    //background-color: #33ff57;
+    transform: rotateY(180deg);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.logo {
+  perspective: 1000px;
+  width: 140px;
+  height: 20px;
+
+  &-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    animation: flip 10s infinite; /* Автоматическая анимация (3 секунды) */
+  }
+
+  &-front, &-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-front {
+  }
+
+  &-back {
+    transform: rotateY(180deg);
+  }
+
+  .logo-img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+@keyframes flip {
+  0% { transform: rotateY(0deg); }      /* Начало (лицевая сторона) */
+  10% { transform: rotateY(180deg); }   /* Быстрый переворот (10% от 3 сек = 0.3 сек) */
+  50% { transform: rotateY(180deg); }   /* Обратная сторона видна до 50% (1.5 сек) */
+  60% { transform: rotateY(360deg); }   /* Быстрый возврат (ещё 0.3 сек) */
+  100% { transform: rotateY(360deg); }  /* Лицевая сторона видна до конца (3 сек) */
+}
