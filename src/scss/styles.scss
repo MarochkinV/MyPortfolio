@@ -9,22 +9,25 @@
   align-items: center;
   position: relative;
 
-  &__nav, &__button {
+  &__nav, &__button, .hvr-grow-shadow {
     @media (max-width: 768px) {
       display: none;
     }
   }
 
-  &__button {
+  .header__button {
+    text-align: center;
     width: 153px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 16px 0;
-    gap: 8px;
     background: $color-black;
     border-radius: 4px;
+    cursor: pointer;
+
+
+    &:hover .header__button-button {
+      color: $color-red;
+      transition: all 0.3s ease;
+    }
 
     .header__button-button {
       font-family: $font-nav;
@@ -32,11 +35,6 @@
       color: $color-white;
       background: transparent;
       border: none;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      display: none;
     }
   }
 
@@ -115,11 +113,21 @@
     }
 
     @keyframes flip {
-      0% { transform: rotateY(0deg); }
-      10% { transform: rotateY(180deg); }
-      50% { transform: rotateY(180deg); }
-      60% { transform: rotateY(360deg); }
-      100% { transform: rotateY(360deg); }
+      0% {
+        transform: rotateY(0deg);
+      }
+      10% {
+        transform: rotateY(180deg);
+      }
+      50% {
+        transform: rotateY(180deg);
+      }
+      60% {
+        transform: rotateY(360deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
     }
   }
 
@@ -134,12 +142,16 @@
           font-family: $font-nav;
           font-size: $font-size-nav;
           color: $color-black;
+
+          &:hover {
+            color: $color-red;
+            transition: all 0.3s ease;
+          }
         }
       }
     }
   }
 }
-
 
 .mobile-menu {
   position: fixed;
@@ -173,8 +185,8 @@
 
     &-link {
       text-decoration: none;
-      color: #333;
-      font-size: 1.5rem;
+      color: $color-red;
+      font-size: $font-size-nav;
       transition: color 0.3s;
 
       &:hover {
@@ -198,7 +210,7 @@
     .mobile-button {
       font-family: $font-nav;
       font-size: $font-size-nav;
-      color: $color-white;
+      color: $color-red;
       background: transparent;
       border: none;
       cursor: pointer;
@@ -241,8 +253,36 @@
     .social_icon {
       margin-top: 64px;
 
-      .icon {
+      .icon-github {
         margin-right: 24px;
+
+        &:hover {
+          svg {
+            path {
+              fill: #5968BA; // Цвет при наведении
+            }
+
+            rect {
+              stroke: $color-red; // Обводка при наведении
+            }
+          }
+        }
+      }
+
+      .icon-behance {
+        margin-right: 24px;
+
+        &:hover {
+          svg {
+            path {
+              fill: #1769FF; // Цвет при наведении
+            }
+
+            rect {
+              stroke: $color-red; // Обводка при наведении
+            }
+          }
+        }
       }
     }
   }
@@ -251,12 +291,45 @@
     position: absolute;
     top: 60px;
     right: 0;
+
+    .svg-container {
+
+      &:hover {
+        .hair {
+          fill: #A57567;
+        }
+
+        .beard {
+          fill: #A57567;
+        }
+
+        .shirt {
+          stroke: $color-red;
+        }
+
+
+        .laptop-three {
+          fill: #A259FF;
+        }
+
+        .laptop-two {
+          fill: #0ACF83;
+        }
+
+        .laptop {
+          fill: #F24E1E;
+          stroke: #A259FF;
+        }
+
+        .shorts {
+          fill: #696a6c;
+        }
+
+      }
+    }
   }
 
 }
-
-
-
 
 .block_flip-card {
   display: flex;
