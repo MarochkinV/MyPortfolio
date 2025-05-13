@@ -1,8 +1,3 @@
-// $(document).ready(function() {
-//     $('.flip-burger').click(function() {
-//         $(this).toggleClass('flipped');
-//     });
-// });
 
 $(document).ready(function() {
     // Обработчик клика по бургеру
